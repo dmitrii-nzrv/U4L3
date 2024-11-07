@@ -30,9 +30,15 @@ struct ContentView: View {
                 HStack{
                     
                     HStack {
-                        Categories(iconName: "film.fill", title: "Фильмы")
-                        Categories(iconName: "dog.fill", title: "Сериалы")
-                        Categories(iconName: "display", title: "Мультфильмы")
+                         CategoryButton(iconName: "popcorn.fill", title: "Фильмы") {
+                        print("Фильмы нажаты")
+                    }
+                    CategoryButton(iconName: "tv.fill", title: "Сериалы") {
+                        print("Сериалы нажаты")
+                    }
+                    CategoryButton(iconName: "film.fill", title: "Мультфильмы") {
+                        print("Мультфильмы нажаты")
+                    }
                         
                     }
                 }
@@ -101,4 +107,31 @@ struct Categories: View {
         
     }
     
+}
+
+struct CategoryButton: View {
+    let iconName: String
+    let title: String
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                Image(systemName: iconName)
+                    .font(.system(size: 12))
+                    .foregroundColor(.white)
+                
+                Text(title)
+                    .font(.system(size: 12))
+                    .foregroundColor(.white)
+            }
+            .padding(.leading, 15)
+            .padding(.trailing, 15)
+            .padding(.bottom, 10)
+            .padding(.top, 10)
+            //.frame(height: 40) // Высота кнопки
+            .background(Color(UIColor.darkGray))
+            .cornerRadius(7)
+        }
+    }
 }
