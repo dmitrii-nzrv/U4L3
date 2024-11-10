@@ -19,6 +19,7 @@ struct ContentView: View {
                         .frame(width: 50, height: 50)
                         .clipShape(.rect(cornerRadius: 25))
                 }
+                .padding(12)
                 ScrollView(.horizontal){
                     HStack{
                         Image(.img1)
@@ -27,21 +28,24 @@ struct ContentView: View {
                         Image(.img1)
                     }
                 }
+                //.padding(12)
                 HStack{
-                    
                     HStack {
-                         CategoryButton(iconName: "popcorn.fill", title: "Фильмы") {
-                        print("Фильмы нажаты")
-                    }
-                    CategoryButton(iconName: "tv.fill", title: "Сериалы") {
-                        print("Сериалы нажаты")
-                    }
-                    CategoryButton(iconName: "film.fill", title: "Мультфильмы") {
-                        print("Мультфильмы нажаты")
-                    }
-                        
+                        CategoryButton(iconName: "popcorn.fill", title: "Фильмы") {
+                            print("Фильмы нажаты")
+                        }
+                        CategoryButton(iconName: "tv.fill", title: "Сериалы") {
+                            print("Сериалы нажаты")
+                        }
+                        CategoryButton(iconName: "film.fill", title: "Мультфильмы") {
+                            print("Мультфильмы нажаты")
+                        }
                     }
                 }
+                .padding(.leading, 12)
+                .padding(.trailing, 12)
+                //.padding(.bottom, 12)
+                //.padding(12)
                 
                 HStack{
                     Text("Продолжить просмотр")
@@ -49,6 +53,7 @@ struct ContentView: View {
                         .font(.system(size: 26))
                     Spacer()
                 }
+                .padding(12)
                 
                 ScrollView(.horizontal){
                     HStack{
@@ -59,13 +64,17 @@ struct ContentView: View {
                     }
                 }
                 
+                
                 HStack{
                     Text("Фильмы для вас")
                         .foregroundStyle(.white)
                         .font(.system(size: 26))
                     Spacer()
                 }
-                
+                //.padding(12)
+                .padding(.leading, 12)
+                .padding(.trailing, 12)
+                .padding(.bottom, 10)
                 ScrollView(.horizontal){
                     HStack{
                         Image(.img8)
@@ -77,7 +86,7 @@ struct ContentView: View {
                 
             }
         }
-        .padding()
+       // .padding()
         .background(Color.black)
     }
     
@@ -100,7 +109,7 @@ struct Categories: View {
                 .font(.system(size: 12))
                 .foregroundColor(.white)
         }
-        .padding(12)
+        //.padding(12)
         .background(Color(UIColor.darkGray))
         .cornerRadius(10)
         
